@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <form class="well form-horizontal" action="/register" method="post" id="contact_form">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>
+                    <center>
+                        <h2><b>Registration Form</b></h2>
+                    </center>
+                </legend><br>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="firstname" placeholder="First Name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="lastname" placeholder="Last Name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Password</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="password" placeholder="Password" class="form-control" type="password">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Confirm Password</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="confirmpassword" placeholder="Confirm Password" class="form-control"
+                                type="password">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Contact No.</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="phone" placeholder="+91" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Age</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="age" placeholder="age" class="form-control" type="number">
+                        </div>
+                    </div>
+                </div>
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <label class="radio inline">
+                            <input type="radio" name="gender" value="male" checked>
+                            <span>Male</span>
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" name="gender" value="female">
+                            <span>Female</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <button type="submit" class="btnRegister" value="Register">SUBMIT</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
