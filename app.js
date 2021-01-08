@@ -8,15 +8,15 @@ const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 3333;
 require('./db/connection');
 const Register = require('./models/registers');
- const auth = require('./middleware/auth');
+const auth = require('./middleware/auth');
 
 /* 1st */
 // const static_path = path.join(path.join(__dirname, "./public"))
 // app.use(express.static(static_path));
 
 /*2nd*/
-const templates_path = path.join(__dirname,"templates","views")
-const partials_path = path.join(__dirname, "templates","partials")
+const templates_path = path.join(__dirname, "templates", "views")
+const partials_path = path.join(__dirname, "templates", "partials")
 
 app.set('view engine', 'hbs');
 app.set("views", templates_path)
@@ -43,9 +43,18 @@ app.get('/login', (req, res) => {
     res.render('login')
 })
 
-app.get('/anotherPage',auth, (req, res) => {
-    //console.log(` ::::::::::::: ${req.cookies.cookiesss}`);
+app.get('/anotherPage', auth, (req, res) => {
+    //console.log(` ::::::::::::: ${req.cookies.jwt}`);
     res.render('anotherPage');
+})
+
+app.get('/logout', auth, async (req, res) => {
+    try {
+        console.log("logout");
+    } catch (error) {
+        console.log(error);
+        res.status(400).send(error);
+    }
 })
 
 app.post('/register', async (req, res) => {
@@ -70,7 +79,7 @@ app.post('/register', async (req, res) => {
             console.log("token", token);
 
             //for cookie
-            res.cookie("cookiesss", token, {
+            res.cookie("jwt", token, {
                 expires: new Date(Date.now() + 30000),
                 httpOnly: true
             })
@@ -116,7 +125,7 @@ app.post('/login', async (req, res) => {
         const token = await userEmail.generateAuthToken();
         console.log("login token", token);
 
-        res.cookie("cookiesss", token, {
+        res.cookie("jwt", token, {
             expires: new Date(Date.now() + 30000),
             httpOnly: true,
             //secure: true
